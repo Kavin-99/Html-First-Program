@@ -14,45 +14,95 @@
 
 		<h2>ATM SWITCH</h2>
 
+		<form id="myform">
+
 		<div class="form">
 			<div class="card space icon-relative">
 				<label class="label">Card Details</label>
-				<!-- <input type="tel" class="input" name="Card_Details" placeholder="Enter Details"  min="0000000000000000" max="99999999999999999"> -->
 
-<input type="text" class="input" name="Card_Details"  placeholder="Enter Card Details"  min="0000000000000000" max="99999999999999999"
-    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+				
+					<input type="text" class="input" name="Card_Details"  placeholder="Enter Card Details"  oninvalid="InvalidMsg(this)" oninput="InvalidMsg(this)" required="required" />
+
+				
+
 				<i class="far fa-credit-card"></i>
 			</div>
 			<div class="card space icon-relative">
 				<label class="label">Amount</label>
-				<input type="number" class="input" name="Amount" placeholder="Enter Amount">
+				<input type="number" class="input" name="Amount" placeholder="Enter Amount" oninvalid="InvalidAmountMsg(this)" oninput="InvalidAmountMsg(this)" required="required" />
 				<i class="fas fa-rupee-sign"></i>
 			</div>
-			<div class="card-grp">
-				<div class="card-item icon-relative">
-					<label class="label">Balance</label>
-				    <input type="number" class="input" name="Balance" placeholder="Rs.0">
-				    <! <i class="fas fa-rupee-sign"></i>
-			</div> -->
+			<!-- <div class="card-grp"> -->
+			
 			<div class="card-grp">
 				<div class="card-item">
-					<label class="label">Withdraw</label>
-				    <input type="number" class="input" name="Withdraw" placeholder="Rs.0">
-				    <!-- <i class="fas fa-rupee-sign"></i> -->
+				
+					<input type="radio" id="age1"  name="age" value="30">
+  					<label class="label">Deposit</label><br>
+
+				
+					
 			</div>
 			<div class="card-grp">
 				<div class="card-item icon-relative">
-					<label class="label">Deposit</label>
-				    <input type="number" class="input" name="Deposit" placeholder="Rs.0">
-				    <!-- <i class="fas fa-rupee-sign"></i> -->
+					<input type="radio" id="age3" name="age" value="100">
+					<label class="label">Withdraw</label>
 			</div>
-		</div>
+		</div>	
 
-		<div class="btn">
-			Submit
-		</div>
+		<input type="submit" class="btn"/> 
+
+
+	</form>
 	</div>
 </div>
+
+
+
+
+
+
+
+<script>
+	function InvalidCardMsg(textbox) {
+
+		if (textbox.value === '') {
+			textbox.setCustomValidity	
+				('Entering an card number is necessary!');
+		} else if (textbox.validity.typeMismatch) {
+			textbox.setCustomValidity
+				('Please enter a number');
+		}
+		else if (textbox.value>9999999999999999 || textbox.value<1000000000000000  ) {
+			textbox.setCustomValidity
+				('Card number must be 16-digits only !!');
+		}
+		 else {
+			textbox.setCustomValidity('');
+		}
+
+		return true;
+	}
+
+
+
+	function InvalidAmountMsg(textbox) {
+
+if (textbox.value === '') {
+	textbox.setCustomValidity	
+		('Enter an Amount!');
+} else if (textbox.validity.typeMismatch) {
+	textbox.setCustomValidity
+		('Invalid type ! Enter Amount');
+}
+
+ else {
+	textbox.setCustomValidity('');
+}
+
+return true;
+}
+</script>
 
 </body>
 </html>
