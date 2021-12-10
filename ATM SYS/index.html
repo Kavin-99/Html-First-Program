@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>ATM SYSTEM</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<div class="wrapper">
+	<div class="payment">
+
+		<h2>ATM SWITCH</h2>
+
+		<div class="form">
+			<div class="card space icon-relative">
+				<label class="label">Card Details</label>
+				<!-- <input type="tel" class="input" name="Card_Details" placeholder="Enter Details"  min="0000000000000000" max="99999999999999999"> -->
+
+<input type="text" class="input" name="Card_Details"  placeholder="Enter Card Details"  min="0000000000000000" max="99999999999999999"
+    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');" />
+				<i class="far fa-credit-card"></i>
+			</div>
+			<div class="card space icon-relative">
+				<label class="label">Amount</label>
+				<input type="number" class="input" name="Amount" placeholder="Enter Amount">
+				<i class="fas fa-rupee-sign"></i>
+			</div>
+			<div class="card-grp">
+				<div class="card-item icon-relative">
+					<label class="label">Balance</label>
+				    <input type="number" class="input" name="Balance" placeholder="Rs.0">
+				    <! <i class="fas fa-rupee-sign"></i>
+			</div> -->
+			<div class="card-grp">
+				<div class="card-item">
+					<label class="label">Withdraw</label>
+				    <input type="number" class="input" name="Withdraw" placeholder="Rs.0">
+				    <!-- <i class="fas fa-rupee-sign"></i> -->
+			</div>
+			<div class="card-grp">
+				<div class="card-item icon-relative">
+					<label class="label">Deposit</label>
+				    <input type="number" class="input" name="Deposit" placeholder="Rs.0">
+				    <!-- <i class="fas fa-rupee-sign"></i> -->
+			</div>
+		</div>
+
+		<div class="btn">
+			Submit
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
